@@ -48,6 +48,3 @@ def admin():
     contacts = Contact.query.all()  # Get all contact messages
     return render_template('admin.html', contacts=contacts)
 
-if __name__ == '__main__':
-    app.run(debug=True)
-    
