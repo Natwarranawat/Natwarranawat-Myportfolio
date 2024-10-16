@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<section id="about" class="text-center p-10 bg-white shadow-lg rounded-lg mb-10" data-aos="fade-up" data-aos-duration="1000">
+    <h2 class="text-4xl font-bold mb-4">About Me</h2>
+    <p class="text-lg">
+        Hello! I'm a web developer skilled in HTML, CSS, JavaScript, and Python. Welcome to my portfolio!
+    </p>
+</section>
+
+<section id="projects" class="grid grid-cols-1 md:grid-cols-2 gap-6 my-10">
+    <div class="bg-white p-6 rounded-lg shadow-lg" data-aos="zoom-in" data-aos-duration="1000">
+        <img src="{{ url_for('static', filename='images/project1.png') }}" alt="Project 1" class="w-full h-48 object-cover rounded">
+        <h3 class="text-2xl font-semibold mt-4">Project 1</h3>
+        <p class="text-gray-700">A brief description of this amazing project.</p>
+    </div>
+
+    <div class="bg-white p-6 rounded-lg shadow-lg" data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="200">
+        <img src="{{ url_for('static', filename='images/project2.png') }}" alt="Project 2" class="w-full h-48 object-cover rounded">
+        <h3 class="text-2xl font-semibold mt-4">Project 2</h3>
+        <p class="text-gray-700">Another great project to showcase my skills.</p>
+    </div>
+</section>
+
+<!-- Contact Section -->
+<section id="contact" class="bg-gray-200 p-10 rounded-lg" data-aos="fade-up" data-aos-duration="1000">
+    <h2 class="text-4xl font-bold text-center mb-4">Get in Touch</h2>
+    
+    <!-- Flash Messages -->
+    {% with messages = get_flashed_messages(with_categories=true) %}
+      {% if messages %}
+        {% for category, message in messages %}
+          <div class="text-center p-3 mb-4 rounded bg-{{ 'red-400' if category == 'error' else 'green-400' }} text-white">
+            {{ message }}
+          </div>
+        {% endfor %}
+      {% endif %}
+    {% endwith %}
+    
+    <form action="{{ url_for('contact') }}" method="POST" class="max-w-xl mx-auto space-y-4">
+        <input type="text" name="name" placeholder="Your Name" class="w-full p-3 border border-gray-400 rounded" data-aos="fade-right" data-aos-delay="200">
+        <input type="email" name="email" placeholder="Your Email" class="w-full p-3 border border-gray-400 rounded" data-aos="fade-left" data-aos-delay="400">
+        <textarea name="message" placeholder="Your Message" class="w-full p-3 border border-gray-400 rounded" data-aos="fade-up" data-aos-delay="600"></textarea>
+        <button type="submit" class="bg-blue-900 text-white px-4 py-2 rounded hover:bg-blue-800" data-aos="fade-up" data-aos-delay="800">Send Message</button>
+    </form>
+</section>
+{% endblock %}

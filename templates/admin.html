@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin - Contact Messages</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class= "bg-blue-100 text-gray-800">
+    <div class="container mx-auto p-10">
+        <h1 class="text-4xl font-bold mb-6">Contact Messages</h1>
+        <div class="bg-white p-6 rounded-lg shadow-lg">
+            <table class="min-w-full bg-white">
+                <thead class="bg-blue-900 text-white">
+                    <tr>
+                        <th class="py-2 px-4">ID</th>
+                        <th class="py-2 px-4">Name</th>
+                        <th class="py-2 px-4">Email</th>
+                        <th class="py-2 px-4">Message</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for contact in contacts %}
+                    <tr>
+                        <td class="border py-2 px-4">{{ contact.id }}</td>
+                        <td class="border py-2 px-4">{{ contact.name }}</td>
+                        <td class="border py-2 px-4">{{ contact.email }}</td>
+                        <td class="border py-2 px-4">{{ contact.message }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+</html>
