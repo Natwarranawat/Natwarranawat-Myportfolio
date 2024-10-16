@@ -42,8 +42,12 @@ def contact():
 
     flash('Thank you for getting in touch! We will contact you soon.', 'success')
     return redirect(url_for('home'))
+
 @app.route('/admin')
 def admin():
     contacts = Contact.query.all()  # Get all contact messages
     return render_template('admin.html', contacts=contacts)
 
+if __name__ == '__main__':
+    app.run(debug=True)
+    
