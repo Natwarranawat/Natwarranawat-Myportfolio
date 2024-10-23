@@ -4,21 +4,25 @@
 <section id="about" class="text-center p-10 bg-white shadow-lg rounded-lg mb-10" data-aos="fade-up" data-aos-duration="1000">
     <h2 class="text-4xl font-bold mb-4">About Me</h2>
     <p class="text-lg">
-        Hello! I'm a web developer skilled in HTML, CSS, JavaScript, and Python. Welcome to my portfolio!
+        Hello! I'm a passionate full-stack developer skilled in crafting responsive, user-friendly web applications using HTML, CSS, and JavaScript on the frontend, and building robust backend systems with Flask and MySQL. I focus on delivering seamless digital experiences, optimizing both performance and user engagement.
     </p>
 </section>
 
 <section id="projects" class="grid grid-cols-1 md:grid-cols-2 gap-6 my-10">
     <div class="bg-white p-6 rounded-lg shadow-lg" data-aos="zoom-in" data-aos-duration="1000">
         <img src="{{ url_for('static', filename='images/project1.png') }}" alt="Project 1" class="w-full h-48 object-cover rounded">
-        <h3 class="text-2xl font-semibold mt-4">Project 1</h3>
-        <p class="text-gray-700">A brief description of this amazing project.</p>
+        <h3 class="text-2xl font-semibold mt-4">Grocery store Management</h3>
+        <p class="text-gray-700">The Grocery Store Management System is a web-based application designed to streamline the operations of a grocery store. Built using Flask for the backend, an SQL database, and HTML/CSS/JavaScript for the frontend, it automates essential tasks such as inventory tracking, customer order management, and transaction processing.
+
+          Admins can efficiently manage products by adding, updating, or deleting inventory items, with automated stock level tracking to prevent shortages or overstocking. Customers can browse products, place orders online, and receive digital receipts, while the system stores customer details and order history for future reference. The system also tracks sales, generates reports, and offers a smooth checkout process with integrated payment options.
+          
+          With a responsive user interface, the system provides a seamless experience for both administrators and customers, enhancing operational efficiency, reducing manual errors, and offering real-time updates on inventory and sales performance.</p>
     </div>
 
     <div class="bg-white p-6 rounded-lg shadow-lg" data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="200">
         <img src="{{ url_for('static', filename='images/project2.png') }}" alt="Project 2" class="w-full h-48 object-cover rounded">
-        <h3 class="text-2xl font-semibold mt-4">Project 2</h3>
-        <p class="text-gray-700">Another great project to showcase my skills.</p>
+        <h3 class="text-2xl font-semibold mt-4">Currency Converter - Telegram Chatbot</h3>
+        <p class="text-gray-700">Developed a Telegram Currency Converter Chatbot using Flask and Dialogflow, integrating third-party APIs for real-time exchange rates and optimizing backend performance, resulting in 30% faster response times, 99% uptime, and enabling over 1,000 daily currency conversions while boosting user engagement by 20%.</p>
     </div>
 </section>
 
